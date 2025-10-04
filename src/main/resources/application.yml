@@ -1,0 +1,77 @@
+spring:
+  application:
+    name: financas-pessoais-pro
+  datasource:
+    url: jdbc:postgresql://localhost:5432/financas
+    username: financas
+    password: financas
+    driver-class-name: org.postgresql.Driver
+  jpa:
+    hibernate:
+      ddl-auto: validate
+    open-in-view: false
+    properties:
+      hibernate:
+        format_sql: true
+        jdbc:
+          time_zone: UTC
+  flyway:
+    enabled: true
+    baseline-on-migrate: true
+  jackson:
+    time-zone: UTC
+    serialization:
+      WRITE_DATES_AS_TIMESTAMPS: false
+
+app:
+  security:
+    jwt:
+      secret: "d0413c9c9b8a4b5f8cd5e3d7a9d2f1c0"
+      expiration: 3600
+  cors:
+    allowed-origins: ["http://localhost:3000"]
+    allowed-methods: ["GET", "POST", "PUT", "PATCH", "DELETE", "OPTIONS"]
+    allowed-headers: ["Authorization", "Content-Type", "Accept"]
+
+logging:
+  level:
+    root: INFO
+
+---
+spring:
+  config:
+    activate:
+      on-profile: test
+  datasource:
+    url: jdbc:tc:postgresql:16-alpine:///test
+    username: postgres
+    password: postgres
+  flyway:
+    enabled: false
+app:
+  security:
+    jwt:
+      secret: "test-secret-123456789012345678901234567890"
+      expiration: 3600
+
+---
+spring:
+  config:
+    activate:
+      on-profile: prod
+  datasource:
+    url: jdbc:postgresql://db:5432/financas
+    username: financas
+    password: financas
+  jpa:
+    properties:
+      hibernate:
+        format_sql: false
+logging:
+  level:
+    root: INFO
+app:
+  security:
+    jwt:
+      secret: ${JWT_SECRET}
+      expiration: 7200
