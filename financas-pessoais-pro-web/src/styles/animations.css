@@ -1,0 +1,34 @@
+@keyframes fade-in {
+  from { opacity: 0; transform: translateY(10px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+@keyframes slide-up {
+  from { opacity: 0; transform: translateY(8px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+@keyframes scale-in {
+  from { transform: scale(0.9); opacity: 0; }
+  to { transform: scale(1); opacity: 1; }
+}
+
+@keyframes blob {
+  0% { border-radius: 42% 58% 35% 65% / 40% 45% 55% 60%; }
+  50% { border-radius: 55% 45% 60% 40% / 50% 35% 65% 50%; }
+  100% { border-radius: 42% 58% 35% 65% / 40% 45% 55% 60%; }
+}
+
+@keyframes shimmer {
+  0% { background-position: -200% 0; }
+  100% { background-position: 200% 0; }
+}
+
+.view-enter {
+  animation: fade-in 0.4s ease both;
+}
+
+.view-leave {
+  opacity: 0;
+  transition: opacity 0.2s ease;
+}
