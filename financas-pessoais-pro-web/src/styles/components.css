@@ -1,0 +1,105 @@
+.table tr:nth-child(even) {
+  background: rgba(255, 255, 255, 0.02);
+}
+
+.table tr:hover {
+  background: rgba(255, 255, 255, 0.04);
+}
+
+.modal-overlay.is-open .modal {
+  animation: scale-in 0.3s ease;
+}
+
+.toast {
+  animation: slide-up 0.3s ease;
+}
+
+.btn:focus-visible,
+input:focus-visible,
+select:focus-visible,
+textarea:focus-visible {
+  outline: 2px solid var(--primary);
+  outline-offset: 2px;
+}
+
+.chip::before {
+  content: '';
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  margin-right: 0.4rem;
+  background: currentColor;
+}
+
+.card-content {
+  display: grid;
+  gap: 1rem;
+}
+
+.card-footer {
+  display: flex;
+  justify-content: flex-end;
+}
+
+.table .tag {
+  font-weight: 600;
+}
+
+.btn:hover {
+  filter: brightness(1.05);
+}
+
+.btn:active {
+  transform: translateY(1px);
+}
+
+.filters button {
+  align-self: end;
+}
+
+.profile-grid dt {
+  font-weight: 600;
+  color: var(--muted);
+}
+
+.profile-grid dd {
+  font-size: 1rem;
+}
+
+.confetti-canvas {
+  position: fixed;
+  inset: 0;
+  pointer-events: none;
+  z-index: 9999;
+}
+
+.dropdown-menu {
+  min-width: 180px;
+}
+
+.dropdown-menu button {
+  width: 100%;
+}
+
+.table-wrapper {
+  overflow-x: auto;
+}
+
+.chart {
+  position: relative;
+}
+
+.chart::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+  border-radius: var(--radius);
+  background: linear-gradient(145deg, rgba(124, 58, 237, 0.12), transparent 55%);
+  opacity: 0;
+  transition: opacity 0.4s ease;
+}
+
+.chart:hover::after {
+  opacity: 1;
+}

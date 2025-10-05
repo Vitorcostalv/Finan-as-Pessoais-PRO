@@ -1,0 +1,37 @@
+html[data-theme='dark'] body {
+  background-color: var(--bg);
+  color: var(--text);
+}
+
+html[data-theme='light'] body {
+  background-color: var(--bg);
+  color: var(--text);
+}
+
+html[data-theme='light'] .glass {
+  border: 1px solid rgba(99, 102, 241, 0.1);
+}
+
+html[data-theme='light'] .app-sidebar {
+  background: rgba(255, 255, 255, 0.8);
+}
+
+html[data-theme='light'] .app-navbar {
+  background: rgba(255, 255, 255, 0.85);
+}
+
+html[data-theme='dark'] .app-sidebar,
+html[data-theme='dark'] .app-navbar {
+  background: rgba(15, 23, 32, 0.8);
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+}
